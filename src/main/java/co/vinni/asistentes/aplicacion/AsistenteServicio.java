@@ -8,6 +8,7 @@ import jakarta.inject.Inject;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+import java.util.Set;
 
 @ApplicationScoped
 public class AsistenteServicio {
@@ -15,15 +16,19 @@ public class AsistenteServicio {
     @Inject
     AsistenteRepositorio repositorio;
 
+    private static final Set<String> RESPONSABLES_TEMPORALES = Set.of(
+            "98765",
+            "123456",
+            "55555"
+    );
+
     public void crear(Asistente asistente) {
         validarCamposObligatorios(asistente);
         validarFechaNacimiento(asistente);
         validarEdadMenorDe16(asistente);
         validarEdadCoherente(asistente);
         validarIdentificacionNoRepetida(asistente.identificacion);
-
-        // Pendiente: validar que la identificación del responsable exista
-        // cuando el módulo de responsables esté implementado.
+        validarResponsableExiste(asistente.identificacionResponsable);
 
         repositorio.crear(asistente);
     }
@@ -97,5 +102,11 @@ public class AsistenteServicio {
                 .ifPresent(asistente -> {
                     throw new IllegalArgumentException("Ya existe un asistente con esa identificación.");
                 });
+    }
+
+    private void validarResponsableExiste(String identificacionResponsable) {
+        if (!RESPONSABLES_TEMPORALES.contains(identificacionResponsable)) {
+            throw new IllegalArgumentException("La identificación del responsable no existe en el sistema.");
+        }
     }
 }

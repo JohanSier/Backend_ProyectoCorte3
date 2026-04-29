@@ -1,4 +1,4 @@
-package co.vinni.responsable.dominio.modelo;
+package co.vinni.asistente.dominio.modelo;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;

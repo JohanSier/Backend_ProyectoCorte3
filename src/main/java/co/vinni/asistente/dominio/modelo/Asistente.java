@@ -1,9 +1,9 @@
-package co.vinni.responsable.dominio.modelo;
+package co.vinni.asistente.dominio.modelo;
 
 import lombok.Builder;
 
 @Builder
-public class Responsable {
+public class Asistente {
     public String nombre;
     public String apellido;
     public String email;

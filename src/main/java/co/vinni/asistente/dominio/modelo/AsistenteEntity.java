@@ -1,4 +1,4 @@
-package co.vinni.responsable.dominio.modelo;
+package co.vinni.asistente.dominio.modelo;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
@@ -7,11 +7,11 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "RESPONSABLE")
+@Table(name = "Asistente")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponsableEntity extends PanacheEntity {
+public class AsistenteEntity extends PanacheEntity {
 
     public String nombre;
     public String apellido;

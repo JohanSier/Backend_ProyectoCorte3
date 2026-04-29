@@ -1,9 +1,9 @@
-package co.vinni.responsable.infraestructura.dto;
+package co.vinni.asistente.infraestructura.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public record ResponsableDto(
+public record AsistenteDto(
         @NotBlank(message = "El nombre es requerido")
         String nombre,
         @NotBlank(message = "El apellido es requerido")

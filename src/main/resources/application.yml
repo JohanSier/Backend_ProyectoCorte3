@@ -52,7 +52,7 @@ quarkus:
   swagger-ui:
     enabled: true
     always-include: true
-    path: "/swager-ui"
+    path: "/swagger-ui"
     title: "Comedor comunitario - Vinni"
     description: "API generado en Quarkus para gestion de comedor comunitario"
     version: "V1"

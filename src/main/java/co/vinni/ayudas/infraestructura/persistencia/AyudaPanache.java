@@ -1,16 +1,17 @@
-package co.vinni.docentes.infraestructura.persistencia;
+package co.vinni.ayudas.infraestructura.persistencia;
 
-import co.vinni.docentes.dominio.modelo.Docente;
-import co.vinni.docentes.dominio.modelo.DocenteEntity;
-import co.vinni.docentes.dominio.repositorio.DocenteRepositorio;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
 
+import co.vinni.ayudas.dominio.modelo.Docente;
+import co.vinni.ayudas.dominio.modelo.DocenteEntity;
+import co.vinni.ayudas.dominio.repositorio.DocenteRepositorio;
+
 @ApplicationScoped
-public class DocentePanache implements DocenteRepositorio, PanacheRepository<DocenteEntity>{
+public class AyudaPanache implements DocenteRepositorio, PanacheRepository<DocenteEntity>{
 
     @Override
     @Transactional

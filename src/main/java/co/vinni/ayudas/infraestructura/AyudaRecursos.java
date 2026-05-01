@@ -1,8 +1,5 @@
-package co.vinni.docentes.infraestructura;
+package co.vinni.ayudas.infraestructura;
 
-import co.vinni.docentes.aplicacion.DocenteServicio;
-import co.vinni.docentes.dominio.modelo.Docente;
-import co.vinni.docentes.infraestructura.dto.DocenteDto;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -11,15 +8,19 @@ import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
+import co.vinni.ayudas.aplicacion.AyudaServicio;
+import co.vinni.ayudas.dominio.modelo.Docente;
+import co.vinni.ayudas.infraestructura.dto.AyudaDto;
+
 import java.util.List;
 
-@Path("/docentes")
+@Path("/ayudas")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class DocentesRecursos {
+public class AyudaRecursos {
 
     @Inject
-    DocenteServicio docenteServicio;
+    AyudaServicio docenteServicio;
 
     @POST
     @Operation(
@@ -34,7 +35,7 @@ public class DocentesRecursos {
         responseCode = "400",
         description = "Datos de entrada invalidos"
     )
-    public Response crear(@Valid DocenteDto docenteDto) {
+    public Response crear(@Valid AyudaDto docenteDto) {
         Docente docente = Docente
                 .builder()
                 .nombre(docenteDto.nombre())
@@ -48,8 +49,8 @@ public class DocentesRecursos {
     @GET
     @Operation(summary = "Lista todos los docentes")
     public Response obtenerTodos() {
-        List<DocenteDto> docenteDtos = docenteServicio.listar().stream()
-                .map(docente -> new DocenteDto(docente.nombre,  docente.apellido, docente.email) )
+        List<AyudaDto> docenteDtos = docenteServicio.listar().stream()
+                .map(docente -> new AyudaDto(docente.nombre,  docente.apellido, docente.email) )
                 .toList();
         return Response.status(Response.Status.OK).entity(docenteDtos).build();
     }

@@ -21,7 +21,7 @@ public class EstudianteRecursoTest {
                 .contentType(ContentType.JSON)
                 .body(json)
                 .when()
-                    .post("/docentes")
+                    .post("/estudiantes")
                 .then()
                 .statusCode(201);
     }
@@ -31,7 +31,7 @@ public class EstudianteRecursoTest {
 
         given()
                 .when()
-                    .get("/docentes")
+                    .get("/estudiantes")
                 .then()
                     .statusCode(200)
                     .contentType(ContentType.JSON)
@@ -52,7 +52,7 @@ public class EstudianteRecursoTest {
                 .contentType(ContentType.JSON)
                 .body(jsonInvalido)
                 .when()
-                .post("/docentes")
+                .post("/estudiantes")
                 .then()
                     .statusCode(400)
                 .body("mensaje",is("Error de validación en los datos de entrada") );

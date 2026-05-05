@@ -1,6 +1,6 @@
 quarkus:
   application:
-    name: Gestion de Docentes
+    name: Gestion de Ayudas
     version: 1.0-SNAPSHOT
 
   # HTTP
@@ -42,7 +42,7 @@ quarkus:
 
     file:
       enabled: true
-      path: logs/gestudiantes.log
+      path: logs/gayudas.log
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
       rotation:
         max-file-size: 5M # Tamaño máximo
@@ -52,7 +52,7 @@ quarkus:
   swagger-ui:
     enabled: true
     always-include: true
-    path: "/swager-ui"
+    path: "/swagger-ui"
     title: "Comedor comunitario - Vinni"
     description: "API generado en Quarkus para gestion de comedor comunitario"
     version: "V1"

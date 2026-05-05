@@ -1,43 +1,30 @@
 package co.vinni.ayudas.infraestructura.persistencia;
 
+import co.vinni.ayudas.dominio.modelo.Ayuda;
+import co.vinni.ayudas.dominio.modelo.AyudaEntity;
+import co.vinni.ayudas.dominio.modelo.EstadoAyuda;
+import co.vinni.ayudas.dominio.repositorio.AyudaRepositorio;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
-import java.util.List;
-
-import co.vinni.ayudas.dominio.modelo.Docente;
-import co.vinni.ayudas.dominio.modelo.DocenteEntity;
-import co.vinni.ayudas.dominio.repositorio.DocenteRepositorio;
-
 @ApplicationScoped
-public class AyudaPanache implements DocenteRepositorio, PanacheRepository<DocenteEntity>{
+public class AyudaPanache implements AyudaRepositorio, PanacheRepository<AyudaEntity> {
 
     @Override
     @Transactional
-    public void crear(Docente docente) {
-        DocenteEntity docenteEntity = DocenteEntity
+    public void registrar(Ayuda ayuda) {
+        AyudaEntity entity = AyudaEntity
                 .builder()
-                .nombre(docente.nombre)
-                .apellido(docente.apellido)
-                .email(docente.email)
+                .idColaborador(ayuda.idColaborador)
+                .nombreColaborador(ayuda.nombreColaborador)
+                .tipo(ayuda.tipo)
+                .descripcion(ayuda.descripcion)
+                .valor(ayuda.valor)
+                .cantidad(ayuda.cantidad)
+                .fechaRegistro(ayuda.fechaRegistro)
+                .estado(EstadoAyuda.REGISTRADA)
                 .build();
-        persist(docenteEntity);
-
-    }
-
-    @Override
-    public List<Docente> obtenerTodos() {
-        return listAll().stream().map(
-                entidad ->{
-                    Docente docente = Docente
-                            .builder()
-                            .nombre(entidad.nombre)
-                            .apellido(entidad.apellido)
-                            .email(entidad.email)
-                            .build();
-                    return docente;
-                }
-        ).toList();
+        persist(entity);
     }
 }

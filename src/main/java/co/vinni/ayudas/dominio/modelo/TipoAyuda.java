@@ -1,5 +1,6 @@
 package co.vinni.ayudas.dominio.modelo;
 
-public class TipoAyuda {
-    
+public enum TipoAyuda {
+    DINERO,
+    EN_ESPECIE
 }

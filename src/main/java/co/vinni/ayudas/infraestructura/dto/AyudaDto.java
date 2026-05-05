@@ -1,16 +1,29 @@
 package co.vinni.ayudas.infraestructura.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import co.vinni.ayudas.dominio.modelo.TipoAyuda;
+import jakarta.validation.constraints.*;
+import java.time.LocalDate;
 
 public record AyudaDto(
-        @NotBlank(message = "El nombre es requerido")
-        String nombre,
-        @NotBlank(message = "El apellido es requerido")
-        String apellido,
-        @Email(message = "El formato del correo es incorrecto")
-        @NotBlank(message = "El email es requerido")
-        String email
 
+        @NotNull(message = "El tipo de ayuda es requerido")
+        TipoAyuda tipo,
+
+        @NotNull(message = "El id del colaborador es requerido")
+        Long idColaborador,
+
+        @NotBlank(message = "El nombre del colaborador es requerido")
+        String nombreColaborador,
+
+        @NotBlank(message = "La descripción de la ayuda es requerida")
+        String descripcion,
+
+        Double valor,
+
+        Integer cantidad,
+
+        @NotNull(message = "La fecha de registro es requerida")
+        @PastOrPresent(message = "La fecha de registro no puede ser futura")
+        LocalDate fechaRegistro
 ) {
 }

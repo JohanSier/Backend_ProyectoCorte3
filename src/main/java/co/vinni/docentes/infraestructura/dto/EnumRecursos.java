@@ -22,13 +22,13 @@ public class EnumRecursos {
         List<Map<String, String>> tipos = Arrays.stream(TiposDocumentos.values())
                 .map(tipo -> Map.of(
                     "valor", tipo.name(),
-                    "descripcion", obtenerDescripcion(tipo)
+                    "descripcion", tipo.getDescripcion()
                 ))
                 .collect(Collectors.toList());
         return Response.ok(tipos).build();
     }
 
-    private String obtenerDescripcion(TiposDocumentos tipo) {
+    /* private String obtenerDescripcion(TiposDocumentos tipo) {
         switch (tipo) {
             case CC: return "Cédula de Ciudadanía";
             case TI: return "Tarjeta de Identidad";
@@ -39,6 +39,6 @@ public class EnumRecursos {
             case PAS: return "Pasaporte";
             case NIT: return "NIT";
             default: return tipo.name();
-        }
-    }
+        } 
+    } */
 }

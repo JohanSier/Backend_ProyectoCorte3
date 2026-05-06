@@ -1,8 +1,8 @@
-package co.vinni.docentes.servicio;
+package co.vinni.colaborador.servicio;
 
-import co.vinni.docentes.aplicacion.ColaboradorServicio;
-import co.vinni.docentes.dominio.modelo.Colaborador;
-import co.vinni.docentes.dominio.repositorio.ColaboradorRepositorio;
+import co.vinni.colaborador.aplicacion.ColaboradorServicio;
+import co.vinni.colaborador.dominio.modelo.Colaborador;
+import co.vinni.colaborador.dominio.repositorio.ColaboradorRepositorio;
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
@@ -29,7 +29,7 @@ public class ColaboradorServicioTest {
     public void setup(){
         colaboradorPrueba = Colaborador
                 .builder()
-                .tipoDocumento(co.vinni.docentes.dominio.modelo.TiposDocumentos.CC)
+                .tipoDocumento(co.vinni.colaborador.dominio.modelo.TiposDocumentos.CC)
                 .numeroDocumento("123456789")
                 .nombres("Elsa")
                 .apellidos("Patero")

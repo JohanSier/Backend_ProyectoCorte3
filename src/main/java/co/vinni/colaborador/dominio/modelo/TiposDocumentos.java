@@ -1,4 +1,4 @@
-package co.vinni.docentes.dominio.modelo;
+package co.vinni.colaborador.dominio.modelo;
 
 public enum TiposDocumentos {
 

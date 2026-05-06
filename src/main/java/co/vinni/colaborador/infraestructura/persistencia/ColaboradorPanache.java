@@ -1,8 +1,8 @@
-package co.vinni.docentes.infraestructura.persistencia;
+package co.vinni.colaborador.infraestructura.persistencia;
 
-import co.vinni.docentes.dominio.modelo.Colaborador;
-import co.vinni.docentes.dominio.modelo.ColaboradorEntity;
-import co.vinni.docentes.dominio.repositorio.ColaboradorRepositorio;
+import co.vinni.colaborador.dominio.modelo.Colaborador;
+import co.vinni.colaborador.dominio.modelo.ColaboradorEntity;
+import co.vinni.colaborador.dominio.repositorio.ColaboradorRepositorio;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;

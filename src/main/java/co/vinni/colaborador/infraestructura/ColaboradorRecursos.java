@@ -1,8 +1,8 @@
-package co.vinni.docentes.infraestructura;
+package co.vinni.colaborador.infraestructura;
 
-import co.vinni.docentes.aplicacion.ColaboradorServicio;
-import co.vinni.docentes.dominio.modelo.Colaborador;
-import co.vinni.docentes.infraestructura.dto.ColaboradorDto;
+import co.vinni.colaborador.aplicacion.ColaboradorServicio;
+import co.vinni.colaborador.dominio.modelo.Colaborador;
+import co.vinni.colaborador.infraestructura.dto.ColaboradorDto;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;

@@ -1,6 +1,6 @@
-package co.vinni.docentes.infraestructura.dto;
+package co.vinni.colaborador.infraestructura.dto;
 
-import co.vinni.docentes.dominio.modelo.TiposDocumentos;
+import co.vinni.colaborador.dominio.modelo.TiposDocumentos;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

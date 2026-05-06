@@ -1,4 +1,4 @@
-package co.vinni.docentes.dominio.modelo;
+package co.vinni.colaborador.dominio.modelo;
 
 import java.time.LocalDate;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;

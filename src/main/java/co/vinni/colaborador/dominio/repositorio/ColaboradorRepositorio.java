@@ -1,6 +1,6 @@
-package co.vinni.docentes.dominio.repositorio;
+package co.vinni.colaborador.dominio.repositorio;
 
-import co.vinni.docentes.dominio.modelo.Colaborador;
+import co.vinni.colaborador.dominio.modelo.Colaborador;
 
 
 import java.util.List;

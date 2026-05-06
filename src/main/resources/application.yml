@@ -1,6 +1,6 @@
 quarkus:
   application:
-    name: Gestion de Docentes
+    name: Registrar Responsable
     version: 1.0-SNAPSHOT
 
   # HTTP
@@ -42,7 +42,7 @@ quarkus:
 
     file:
       enabled: true
-      path: logs/gestudiantes.log
+      path: logs/responsables.log
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
       rotation:
         max-file-size: 5M # Tamaño máximo

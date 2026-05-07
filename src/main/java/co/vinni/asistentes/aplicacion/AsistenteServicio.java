@@ -1,5 +1,6 @@
 package co.vinni.asistentes.aplicacion;
 
+import co.vinni.asistentes.dominio.modelo.Asistencia;
 import co.vinni.asistentes.dominio.modelo.Asistente;
 import co.vinni.asistentes.dominio.repositorio.AsistenteRepositorio;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -108,5 +109,16 @@ public class AsistenteServicio {
         if (!RESPONSABLES_TEMPORALES.contains(identificacionResponsable)) {
             throw new IllegalArgumentException("La identificación del responsable no existe en el sistema.");
         }
+    }
+
+    public void registrarAsistencia(Asistencia asistencia) {
+        /*validarCamposObligatorios(asistencia);
+        validarFechaNacimiento(asistencia);
+        validarEdadMenorDe16(asistencia);
+        validarEdadCoherente(asistencia);
+        validarIdentificacionNoRepetida(asistencia.identificacion);
+        validarResponsableExiste(asistencia.identificacionResponsable);*/
+
+        repositorio.registrarAsistencia(asistencia);
     }
 }

@@ -1,10 +1,13 @@
 package co.vinni.asistentes.infraestructura.persistencia;
 
+import co.vinni.asistentes.dominio.modelo.Asistencia;
+import co.vinni.asistentes.dominio.modelo.AsistenciaEntity;
 import co.vinni.asistentes.dominio.modelo.Asistente;
 import co.vinni.asistentes.dominio.modelo.AsistenteEntity;
 import co.vinni.asistentes.dominio.repositorio.AsistenteRepositorio;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -12,6 +15,9 @@ import java.util.Optional;
 
 @ApplicationScoped
 public class AsistentePanache implements AsistenteRepositorio, PanacheRepository<AsistenteEntity> {
+
+    @Inject
+    AsistenciaPanache asistenciaPanache;
 
     @Override
     @Transactional
@@ -72,5 +78,19 @@ public class AsistentePanache implements AsistenteRepositorio, PanacheRepository
                 .build();
 
         return Optional.of(asistente);
+    }
+
+    @Override
+    @Transactional
+    public void registrarAsistencia(Asistencia asistencia) {
+        AsistenciaEntity asistenciaEntity = AsistenciaEntity
+                .builder()
+                .asistente_id(asistencia.asistente_id)
+                .fecha(asistencia.fecha)
+                .tipo_servicio(asistencia.tipo_servicio)
+                .observaciones(asistencia.observaciones)
+                .fecha_creacion(asistencia.fecha_creacion)
+                .build();
+        asistenciaPanache.persist(asistenciaEntity);
     }
 }

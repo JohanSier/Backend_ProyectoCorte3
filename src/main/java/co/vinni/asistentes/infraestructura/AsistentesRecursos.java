@@ -1,7 +1,9 @@
 package co.vinni.asistentes.infraestructura;
 
 import co.vinni.asistentes.aplicacion.AsistenteServicio;
+import co.vinni.asistentes.dominio.modelo.Asistencia;
 import co.vinni.asistentes.dominio.modelo.Asistente;
+import co.vinni.asistentes.infraestructura.dto.AsistenciaDto;
 import co.vinni.asistentes.infraestructura.dto.AsistenteDto;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
@@ -78,5 +80,41 @@ public class AsistentesRecursos {
                 .toList();
 
         return Response.status(Response.Status.OK).entity(asistenteDtos).build();
+    }
+
+
+    @POST
+    @Path("/asistencia")
+    @Operation(
+            summary = "Registrar una nueva asistencia",
+            description = "Registra una asistencia asociado a un asistente"
+    )
+    @APIResponse(
+            responseCode = "200",
+            description = "Asistencia creada"
+    )
+    @APIResponse(
+            responseCode = "400",
+            description = "Datos de entrada inválidos"
+    )
+    public Response registrarAsistencia(@Valid AsistenciaDto asistenciaDto) {
+        try {
+            Asistencia asistencia = Asistencia
+                    .builder()
+                    .asistente_id(asistenciaDto.asistente_id())
+                    .fecha(asistenciaDto.fecha())
+                    .tipo_servicio(asistenciaDto.tipo_servicio())
+                    .observaciones(asistenciaDto.observaciones())
+                    .fecha_creacion(asistenciaDto.fecha_creacion())
+                    .build();
+
+            asistenteServicio.registrarAsistencia(asistencia);
+
+            return Response.status(Response.Status.CREATED).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(Map.of("mensaje", e.getMessage()))
+                    .build();
+        }
     }
 }

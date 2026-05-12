@@ -1,6 +1,6 @@
 quarkus:
   application:
-    name: Gestion de Docentes
+    name: Gestion de Colaboradores
     version: 1.0-SNAPSHOT
 
   # HTTP

@@ -28,9 +28,11 @@ public record ColaboradorDto(
         String direccion,
         @NotBlank(message = "La ciudad es requerida")
         String ciudad,
-        @NotNull @PastOrPresent (message = "La fecha de ingreso es requerida")
+        @NotNull(message = "La fecha de ingreso es requerida")
+        @PastOrPresent(message = "La fecha de ingreso no puede ser futura")
         LocalDate fechaIngreso,
-        @NotNull @Past (message = "La fecha de nacimiento es requerida")
+        @NotNull(message = "La fecha de nacimiento es requerida")
+        @Past(message = "La fecha de nacimiento no puede ser futura")
         LocalDate fechaNacimiento,
         @NotBlank(message = "El género es requerido")
         String genero

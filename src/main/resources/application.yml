@@ -1,6 +1,6 @@
 quarkus:
   application:
-    name: Gestion de clientes
+    name: Gestion de Colaboradores
     version: 1.0-SNAPSHOT
 
   # HTTP
@@ -8,18 +8,19 @@ quarkus:
     port: 8860
     host: localhost
     root-path: kkom
-    cors: true
+    #cors: true
     cors-origins: '*'
     cors-methods: GET,POST,PUT,DELETE,OPTIONS
     cors-headers: Content-Type,Authorization,X-Requested-With
 
   # Base de datos - PostgreSQL (Render Cloud)
   datasource:
+    datasource:
     db-kind: postgresql
-    username: admin
-    password: Mo71K9P0FKGJw09nP5H0NNnxhEwQ2NyB
     jdbc:
-      url: "jdbc:postgresql://dpg-d81e4c7avr4c73bal18g-a.oregon-postgres.render.com:5432/comedordb_il6l?sslmode=require"
+      url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   # Hibernate ORM
   hibernate-orm:

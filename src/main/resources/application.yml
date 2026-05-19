@@ -14,14 +14,14 @@ quarkus:
     cors-headers: Content-Type,Authorization,X-Requested-With
 
 
-  # Base de datos
+  # Base de datos - PostgreSQL (Render Cloud)
   datasource:
-    db-kind: h2
+    db-kind: postgresql
     username: admin
-    password: 12345
+    password: Mo71K9P0FKGJw09nP5H0NNnxhEwQ2NyB
     jdbc:
-      #url: "jdbc:h2:mem:gdocente"
-      file: ./data/comedor_db
+      url: "jdbc:postgresql://dpg-d81e4c7avr4c73bal18g-a.oregon-postgres.render.com:5432/comedordb_il6l?sslmode=require"
+
 
   # Hibernate-hibernate-orm:
   hibernate-orm:

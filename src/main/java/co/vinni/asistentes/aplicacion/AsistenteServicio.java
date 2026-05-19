@@ -112,13 +112,6 @@ public class AsistenteServicio {
     }
 
     public void registrarAsistencia(Asistencia asistencia) {
-        /*validarCamposObligatorios(asistencia);
-        validarFechaNacimiento(asistencia);
-        validarEdadMenorDe16(asistencia);
-        validarEdadCoherente(asistencia);
-        validarIdentificacionNoRepetida(asistencia.identificacion);
-        validarResponsableExiste(asistencia.identificacionResponsable);*/
-
         repositorio.registrarAsistencia(asistencia);
     }
 }

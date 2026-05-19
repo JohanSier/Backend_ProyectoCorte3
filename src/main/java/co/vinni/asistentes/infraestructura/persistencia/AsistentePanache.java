@@ -85,7 +85,7 @@ public class AsistentePanache implements AsistenteRepositorio, PanacheRepository
     public void registrarAsistencia(Asistencia asistencia) {
         AsistenciaEntity asistenciaEntity = AsistenciaEntity
                 .builder()
-                .asistente_id(asistencia.asistente_id)
+                .asistenteId(asistencia.asistenteId)
                 .fecha(asistencia.fecha)
                 .tipo_servicio(asistencia.tipo_servicio)
                 .observaciones(asistencia.observaciones)

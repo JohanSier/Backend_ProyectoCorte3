@@ -8,11 +8,8 @@ import java.time.LocalDate;
 
 public record AsistenciaDto(
 
-        @NotBlank(message = "El identificador es requerido")
-        String id_asistencia,
-
         @NotBlank(message = "La identificación es requerida")
-        String asistente_id,
+        String asistenteId,
 
         @NotNull(message = "La fecha de registro es requerida")
         LocalDate fecha,

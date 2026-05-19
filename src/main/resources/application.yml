@@ -1,6 +1,6 @@
 quarkus:
   application:
-    name: Gestion de Docentes
+    name: Gestion de clientes
     version: 1.0-SNAPSHOT
 
   # HTTP
@@ -13,24 +13,20 @@ quarkus:
     cors-methods: GET,POST,PUT,DELETE,OPTIONS
     cors-headers: Content-Type,Authorization,X-Requested-With
 
-
-  # Base de datos
+  # Base de datos - PostgreSQL (Render Cloud)
   datasource:
-    db-kind: h2
+    db-kind: postgresql
     username: admin
-    password: 12345
+    password: Mo71K9P0FKGJw09nP5H0NNnxhEwQ2NyB
     jdbc:
-      #url: "jdbc:h2:mem:gdocente"
-      file: ./data/comedor_db
+      url: "jdbc:postgresql://dpg-d81e4c7avr4c73bal18g-a.oregon-postgres.render.com:5432/comedordb_il6l?sslmode=require"
 
-  # Hibernate-hibernate-orm:
+  # Hibernate ORM
   hibernate-orm:
-    schema-management:
-      strategy:
-        drop-and-create
+    database:
+      generation: drop-and-create
     log:
       sql: true
-
 
   # Configuracion de Logs
   log:
@@ -42,26 +38,26 @@ quarkus:
 
     file:
       enabled: true
-      path: logs/gestudiantes.log
+      path: logs/gclientes.log
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
       rotation:
-        max-file-size: 5M # Tamaño máximo
-        max-backup-index: 5 # Archivos conservados
-        file-suffix: yyyy-MM-dd #Sufijo de retación
+        max-file-size: 5M
+        max-backup-index: 5
+        file-suffix: yyyy-MM-dd
 
   swagger-ui:
     enabled: true
     always-include: true
     path: "/swager-ui"
-    title: "Comedor comunitario - Vinni"
-    description: "API generado en Quarkus para gestion de comedor comunitario"
+    title: "Gestion de clientes demo - Vinni"
+    description: "API generado en Quarkus para gestion de clientes"
     version: "V1"
-    contact-name: "vinni9@gmail.com"
+    contact-name: ""
 
 mp:
   openapi:
     extensions:
       smallrye:
         info:
-          title: "Comedor Comunitario"
+          title: "Gestion de clientes"
           version: "1.1.0"

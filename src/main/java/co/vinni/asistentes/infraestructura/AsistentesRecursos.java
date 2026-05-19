@@ -101,7 +101,7 @@ public class AsistentesRecursos {
         try {
             Asistencia asistencia = Asistencia
                     .builder()
-                    .asistente_id(asistenciaDto.asistente_id())
+                    .asistenteId(asistenciaDto.asistenteId())
                     .fecha(asistenciaDto.fecha())
                     .tipo_servicio(asistenciaDto.tipo_servicio())
                     .observaciones(asistenciaDto.observaciones())
@@ -110,7 +110,9 @@ public class AsistentesRecursos {
 
             asistenteServicio.registrarAsistencia(asistencia);
 
-            return Response.status(Response.Status.CREATED).build();
+            return Response.status(Response.Status.OK)
+                    .entity(Map.of("mensaje", "Asistencia Registrada"))
+                    .build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity(Map.of("mensaje", e.getMessage()))

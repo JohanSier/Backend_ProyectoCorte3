@@ -15,10 +15,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class AsistenciaEntity extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id_asistencia;
-    public String asistente_id;
+    public String asistenteId;
     public LocalDate fecha;
     public String tipo_servicio;
     public String observaciones;

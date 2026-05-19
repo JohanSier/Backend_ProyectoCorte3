@@ -13,7 +13,6 @@ quarkus:
     cors-methods: GET,POST,PUT,DELETE,OPTIONS
     cors-headers: Content-Type,Authorization,X-Requested-With
 
-
   # Base de datos - PostgreSQL (Render Cloud)
   datasource:
     db-kind: postgresql
@@ -22,15 +21,12 @@ quarkus:
     jdbc:
       url: "jdbc:postgresql://dpg-d81e4c7avr4c73bal18g-a.oregon-postgres.render.com:5432/comedordb_il6l?sslmode=require"
 
-
-  # Hibernate-hibernate-orm:
+  # Hibernate ORM
   hibernate-orm:
-    schema-management:
-      strategy:
-        drop-and-create
+    database:
+      generation: drop-and-create
     log:
       sql: true
-
 
   # Configuracion de Logs
   log:
@@ -42,12 +38,12 @@ quarkus:
 
     file:
       enabled: true
-      path: logs/gestudiantes.log
+      path: logs/gclientes.log
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
       rotation:
-        max-file-size: 5M # Tamaño máximo
-        max-backup-index: 5 # Archivos conservados
-        file-suffix: yyyy-MM-dd #Sufijo de retación
+        max-file-size: 5M
+        max-backup-index: 5
+        file-suffix: yyyy-MM-dd
 
   swagger-ui:
     enabled: true
@@ -56,7 +52,7 @@ quarkus:
     title: "Comedor comunitario - Vinni"
     description: "API generado en Quarkus para gestion de comedor comunitario"
     version: "V1"
-    contact-name: "vinni9@gmail.com"
+    contact-name: ""
 
 mp:
   openapi:

@@ -62,3 +62,15 @@ mp:
         info:
           title: "Comedor Comunitario"
           version: "1.1.0"
+
+"%test":
+  quarkus:
+    datasource:
+      db-kind: h2
+      jdbc:
+        url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+      username: sa
+      password: ""
+    hibernate-orm:
+      schema-management:
+        strategy: drop-and-create

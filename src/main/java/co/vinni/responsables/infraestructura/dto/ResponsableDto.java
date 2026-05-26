@@ -6,15 +6,15 @@ import java.util.List;
 
 public record ResponsableDto(
 
-        @NotBlank(message = "La identificacion no puede estar vacia")
+        @NotBlank(message = "La identificación no puede estar vacía")
         String identificacion,
 
-        @NotBlank(message = "El nombre completo no puede estar vacio")
+        @NotBlank(message = "El nombre completo no puede estar vacío")
         String nombreCompleto,
 
         boolean tieneVariosNinos,
 
-        @NotEmpty(message = "Debe registrar al menos un nino")
-        List<@NotBlank(message = "El nombre del nino no puede estar vacio") String> nombresNinos
+        @NotEmpty(message = "Debe registrar al menos un niño")
+        List<@NotBlank(message = "El nombre del niño no puede estar vacío") String> nombresNinos
 
 ) {}

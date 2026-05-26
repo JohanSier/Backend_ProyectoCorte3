@@ -24,11 +24,11 @@ public class ResponsablesRecursos {
     @POST
     @Operation(
             summary = "Registrar un nuevo responsable",
-            description = "Registra el responsable con identificacion, nombre completo y nombres de ninos a cargo"
+            description = "Registra el responsable con identificacion, nombre completo y nombres de niños a cargo"
     )
     @APIResponse(responseCode = "201", description = "Responsable registrado exitosamente")
-    @APIResponse(responseCode = "400", description = "Datos de entrada invalidos")
-    @APIResponse(responseCode = "409", description = "Nino ya registrado con otro responsable")
+    @APIResponse(responseCode = "400", description = "Datos de entrada inválidos")
+    @APIResponse(responseCode = "409", description = "Niño ya registrado con otro responsable")
     public Response crear(@Valid ResponsableDto dto) {
         Responsable responsable = Responsable.builder()
                 .identificacion(dto.identificacion())

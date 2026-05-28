@@ -1,4 +1,4 @@
-package co.vinni.responsables.servicio;
+package co.vinni.responsable.servicio;
 
 import co.vinni.responsables.aplicacion.ResponsableServicio;
 import co.vinni.responsables.dominio.modelo.Responsable;

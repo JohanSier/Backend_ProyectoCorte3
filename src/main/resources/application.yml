@@ -13,9 +13,9 @@ quarkus:
   datasource:
     db-kind: postgresql
     jdbc:
-      url: ${DB_URL}
+      url: ${DB_URL}?sslmode=require
     username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}?sslmode=require
+    password: ${DB_PASSWORD}
 
   # Hibernate ORM
   hibernate-orm:

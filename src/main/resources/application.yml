@@ -15,7 +15,6 @@ quarkus:
 
   # Base de datos - PostgreSQL (Render Cloud)
   datasource:
-    datasource:
     db-kind: postgresql
     jdbc:
       url: ${DB_URL}

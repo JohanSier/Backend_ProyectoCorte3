@@ -6,12 +6,8 @@ quarkus:
   # HTTP
   http:
     port: 8860
-    host: localhost
-    root-path: kkom
-    #cors: true
-    cors-origins: '*'
-    cors-methods: GET,POST,PUT,DELETE,OPTIONS
-    cors-headers: Content-Type,Authorization,X-Requested-With
+    host: 0.0.0.0
+    root-path: /kkom
 
   # Base de datos - PostgreSQL (Render Cloud)
   datasource:
@@ -34,7 +30,7 @@ quarkus:
     console:
       enabled: true
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
-      dark-launch: true
+      
 
     file:
       enabled: true
@@ -49,10 +45,8 @@ quarkus:
     enabled: true
     always-include: true
     path: "/swagger-ui"
-    title: "Comedor comunitario - Vinni"
-    description: "API generado en Quarkus para gestion de comedor comunitario"
-    version: "V1"
-    contact-name: ""
+    
+    
 
 mp:
   openapi:

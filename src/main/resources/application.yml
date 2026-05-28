@@ -15,7 +15,7 @@ quarkus:
     jdbc:
       url: ${DB_URL}
     username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    password: ${DB_PASSWORD}?sslmode=require
 
   # Hibernate ORM
   hibernate-orm:

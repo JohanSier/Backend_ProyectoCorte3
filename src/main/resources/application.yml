@@ -13,7 +13,7 @@ quarkus:
   datasource:
     db-kind: postgresql
     jdbc:
-      url: ${DB_URL}?sslmode=require
+      url: ${DB_URL}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
@@ -24,7 +24,7 @@ quarkus:
     log:
       sql: true
 
-  # Configuracion de Logs
+  # configuration de Logs
   log:
     level: INFO
     console:
